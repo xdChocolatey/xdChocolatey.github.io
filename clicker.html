@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Walter White Clicker</title>
+</head>
+<body>
+
+    <h1 id="score">score:1</h1>
+    <h2>Tighty Walter Whities</h2>
+    <img src=https://metro.co.uk/wp-content/uploads/2013/08/750x100010.jpg?quality=90&strip=all&w=750&h=630&crop=1" id="image" width="400" height="400">
+    <img onclick="upgrade()" src="https://m.media-amazon.com/images/I/51KgbiFUhkL.jpg" id="upgrade" width="300">
+
+    <button id="autoClicker">Autoclicker lmao</button>
+    
+<script>
+    var score = 0
+    var multiplier = 1
+    var upgradePrice = 10
+    document.getElementById("image").addEventListener("click", addScore)
+    document.getElementById("autoClicker").addEventListener("click", autoClicker)
+        function addScore(){
+            score=score+multiplier
+            document.getElementById("score").innerText=score
+    }
+        function upgrade(){
+            if(score>=10){
+                multiplier=multiplier+1
+                score=score-10
+            }
+    }
+    function autoClicker() {
+        setInterval(addScore,1)
+    }
+</script>
+
+</body>
+</html>
