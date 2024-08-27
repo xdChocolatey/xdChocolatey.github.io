@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Bouncing Box</title>
+
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <img src="https://images.vexels.com/media/users/3/143391/isolated/preview/7ade5b7a070aaa381f8d8664ef0d66a2-dvd-logo-red.png" id="box" width="512" height="512">
+
+  <button id="autoClicker">Automate This Process Because Why Not</button>
+
+  <script>
+
+    var direction = 20
+    var otherDirection = 20
+    var x = 100
+    var y = 90
+
+    document.getElementById("box").addEventListener("click",moveBox)
+    document.getElementById("autoClicker").addEventListener("click", autoClicker)
+
+    function moveBox() {
+      if (x<=0){
+        direction = 10
+      }
+      if(x>=1275){
+        direction = -10
+      }
+      x = x + direction
+      if (y >=550) {
+        otherDirection = -20
+      }
+      if(y<=-29){
+        otherDirection=20
+      }
+      y = y + otherDirection
+
+      document.getElementById("box").style.left= x + "px"
+      document.getElementById("box").style.top = y + "px"
+    }
+  
+    function autoClicker() {
+      setInterval(moveBox,50)
+    }
+
+  </script>
+</body>
+
+</html>

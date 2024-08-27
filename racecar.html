@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Racist Game</title>
+  <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVJoy748SOpBy7sjXVt7ZwvdE9UPzOy2o-XqbViQOTBsmJfS3VIKbCC7zijkLhlN-AHLA:https://i.redd.it/90f0nyia7xj11.jpg&usqp=CAU">
+
+
+<style>
+  #crocs {
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    transform: scaleX(-1);
+}
+
+  #wiggler {
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    top: 250px;
+    left: 0px;
+}
+
+  .vertical-line {
+    border-left: 5px solid black;
+    height: 500px;
+    margin-left: 250px;
+    margin-top: 0px;
+}
+</style>
+</head>
+
+<body>
+  <img src="https://m.media-amazon.com/images/I/716NTlxzSsL._AC_UY1000_.jpg" id="crocs">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3q7GXpddNTmucW5NF6YNB7vcJOCxj5SR6UoJdPDsfi7cm-NqqJXZJB8kO6j3ibfqYyoI:https://mario.wiki.gallery/images/4/47/MKT_Icon_WildWiggler.png&usqp=CAU" id="wiggler">
+  <div class="vertical-line"></div>
+
+  <script>
+    var crocsDirection = 10;
+    var wigglerDirection = 10;
+    var x = 0;
+    var y = 0;
+
+    document.addEventListener("keydown", keyPressed);
+
+    function keyPressed(e){
+      console.log("Key pressed", e.key);
+    }
+
+    document.addEventListener("keydown", moveCrocs);
+    document.addEventListener("keydown", moveWiggler);
+
+    function moveCrocs(e){
+     if(e.key === "ArrowUp"){
+      x = x + crocsDirection;
+      document.getElementById("crocs").style.left = x + "px";
+      if(x > 250){
+        alert("Croccy Roccy Wins!");
+        location.reload();
+      }
+    }
+  }
+
+    function moveWiggler(e){
+      if(e.key === "ArrowDown"){
+        y = y + wigglerDirection;
+        document.getElementById("wiggler").style.left = y + "px";
+        if(y > 250){
+          alert("Wiggler Squiggler Wins!");
+          location.reload();
+      }
+    }
+  }
+
+  </script>
+  
+</body>
+</html>

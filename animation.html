@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Animation</title>
+  <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz9oXrIuQBuVOKuTsUYNYKJuKbKHB1vcS13BKc7yv02zPEXsmqrpn_cZ42EypMWs-Fx2U:https://i.pinimg.com/originals/76/7f/1b/767f1b0bb047279481e5b102f7a0c557.png&usqp=CAU">
+</head>
+
+<style>
+    #windows {
+        height: 128px;
+        width: 128px;
+        animation-name: spin;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes spin {
+        0%{
+            rotate: 1000000000deg;
+            height: 256px;
+            width: 128px;
+        }
+        50%{
+            height: 200px;
+            width: 800px;
+        }
+        100%{
+            rotate: 180000000000000deg;
+            height: 256px;
+            width: 128px;
+        }
+
+    }
+</style>
+
+<body>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz9oXrIuQBuVOKuTsUYNYKJuKbKHB1vcS13BKc7yv02zPEXsmqrpn_cZ42EypMWs-Fx2U:https://i.pinimg.com/originals/76/7f/1b/767f1b0bb047279481e5b102f7a0c557.png&usqp=CAU" id="windows">
+
+<script>
+
+</script>
+
+</body>
+</html>
