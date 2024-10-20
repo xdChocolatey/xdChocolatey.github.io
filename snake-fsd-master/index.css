@@ -10,8 +10,12 @@ body {
   background-color: black;
 }
 
-#score, #highScore {
-  color: white;
+#score {
+  color: whitesmoke;
+}
+
+#highScore {
+  color:goldenrod
 }
 
 .snake, .apple {
