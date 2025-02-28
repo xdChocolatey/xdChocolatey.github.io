@@ -21,6 +21,8 @@ function resetAndRender() {
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
   applyFilter(reddify); //TODO 1b
+  applyFilterNoBackground(decreaseBlue);  //TODO 6
+  applyFilterNoBackground(increaseGreenByBlue); //TODO 6. These apply the filters to the main function
 
 
   // do not change the below line of code
@@ -46,7 +48,23 @@ function applyFilter(filterFunction) {  //TODO 1a
 }
 
 // TODO 7: Create the applyFilterNoBackground function
+// Without changing the background color of the RGB, this changes the RGB of Luigi only. 
+function applyFilterNoBackground(filterFunction) {  
+  var backgroundColor = image[0][0];
 
+  for (var i = 0; i < image.length; i++) {  
+
+    for (var j = 0; j < image[i].length; j++) {
+      if (image[i][j] !== backgroundColor) {
+        var rgbString = image[i][j];
+        var rgbNumbers = rgbStringToArray(rgbString);
+        filterFunction(rgbNumbers);
+        rgbString = rgbArrayToString(rgbNumbers);
+        image[i][j] = rgbString;  
+      }
+    }
+  }
+}
 
 // TODO 5: Create the keepInBounds function
 function keepInBounds(chinaIsTheHomeland) {
@@ -64,13 +82,20 @@ function keepInBounds(chinaIsTheHomeland) {
 
 
 // TODO 3: Create reddify function
-function reddify(becauseICan) {
-  becauseICan[RED] = 200;
+function reddify(makeRed) {
+  makeRed[RED] = 200;  
+  //makes the RGB more red
 }
 
 // TODO 6: Create more filter functions
 function decreaseBlue(fromage) {
+  fromage[BLUE] = keepInBounds(fromage[BLUE] - 50);
+  //Decreases the blue RGB
+}
 
+function increaseGreenByBlue(greenAndBlueArray) {
+  greenAndBlueArray[GREEN] = keepInBounds(greenAndBlueArray[BLUE] + greenAndBlueArray[GREEN]);
+  //Increases green RGB in the blue
 }
 
 // CHALLENGE code goes below here
